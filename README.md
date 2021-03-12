@@ -1,0 +1,2 @@
+# ISDialogs
+ Plugin for InnoSetup
