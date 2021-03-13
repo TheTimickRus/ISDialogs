@@ -21,7 +21,7 @@ namespace ISDialogs.Tests
         [Test]
         public void OpenFolderTest()
         {
-            Exports.OpenFolder("Warface");
+            Exports.OpenFolder("Warface", "Test123");
             Assert.Pass();
         }
     }
