@@ -20,7 +20,9 @@ namespace ISDialogs
             var dialog = new VistaOpenFileDialog
             {
                 AddExtension = true,
-                Filter = filter
+                Filter = filter != string.Empty
+                    ? filter
+                    : "All Files|*.*"
             };
 
             return dialog.ShowDialog() ?? false
@@ -36,7 +38,9 @@ namespace ISDialogs
                 AddExtension = true,
                 CreatePrompt = true,
                 FileName = filename,
-                Filter = filter
+                Filter = filter != string.Empty
+                    ? filter
+                    : "All Files|*.*"
             };
 
             return dialog.ShowDialog() ?? false
@@ -45,9 +49,15 @@ namespace ISDialogs
         }
 
         [DllExport(CallingConvention.StdCall)]
-        public static string OpenFolder(string folder)
+        public static string OpenFolder(string folder, string description)
         {
-            var dialog = new VistaFolderBrowserDialog();
+            var dialog = new VistaFolderBrowserDialog
+            {
+                ShowNewFolderButton = true
+            };
+
+            if (description != string.Empty)
+                dialog.Description = description;
 
             return dialog.ShowDialog() ?? false
                 ? Path.Combine(dialog.SelectedPath, folder ?? string.Empty)
