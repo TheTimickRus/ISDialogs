@@ -6,6 +6,14 @@ namespace ISDialogs
 {
     public class Exports
     {
+        #region Task dialog
+
+
+
+        #endregion
+
+        #region Vista-style common file dialogs
+
         [DllExport(CallingConvention.StdCall)]
         public static string OpenFile(string filter)
         {
@@ -14,7 +22,7 @@ namespace ISDialogs
                 AddExtension = true,
                 Filter = filter
             };
-            
+
             return dialog.ShowDialog() ?? false
                 ? dialog.FileName
                 : string.Empty;
@@ -45,5 +53,7 @@ namespace ISDialogs
                 ? Path.Combine(dialog.SelectedPath, folder ?? string.Empty)
                 : string.Empty;
         }
+
+        #endregion
     }
 }
