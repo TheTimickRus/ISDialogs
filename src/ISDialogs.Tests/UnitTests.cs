@@ -7,21 +7,21 @@ namespace ISDialogs.Tests
         [Test]
         public void OpenFileTest()
         {
-            Exports.OpenFile("All Files|*.*");
+            Exports.OpenFile("");
             Assert.Pass();
         }
 
         [Test]
         public void SaveFileTest()
         {
-            Exports.SaveFile("TestFile.cmd", "All Files|*.*");
+            Exports.SaveFile("TestFile.cmd", "");
             Assert.Pass();
         }
 
         [Test]
         public void OpenFolderTest()
         {
-            Exports.OpenFolder("Warface", "Test123");
+            Exports.OpenFolder("Warface", "");
             Assert.Pass();
         }
     }
