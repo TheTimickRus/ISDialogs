@@ -6,12 +6,6 @@ namespace ISDialogs
 {
     public class Exports
     {
-        #region Task dialog
-
-
-
-        #endregion
-
         #region Vista-style common file dialogs
 
         [DllExport(CallingConvention.StdCall)]
