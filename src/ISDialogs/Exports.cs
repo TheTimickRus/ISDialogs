@@ -4,7 +4,7 @@ using Ookii.Dialogs.Wpf;
 
 namespace ISDialogs
 {
-    public class Exports
+    public static class Exports
     {
         #region Vista-style common file dialogs
 
